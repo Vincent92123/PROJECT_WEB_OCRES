@@ -2,6 +2,9 @@ import React, { useEffect, useState, Component } from 'react';
 import './App.css';
 import DisplayOnePokemon from './onePokemonStat/DisplayOnePokemon';
 import GenerationPokemonStat from './generationPokemonStat/generationPokemonStat';
+import CompetenceChartPokemon from './competenceChartPokemon/CompetenceChartPokemon';
+import AnecdotePokemon from './anecdotePokemon/anecdotePokemon';
+import GestionAPI from './gestionAPI/gestionAPI';
 
 class App extends Component {
   constructor(props) {
@@ -26,11 +29,22 @@ class App extends Component {
         <div className="test">
           <p className="App-intro">{this.state.apiResponse}</p>
         </div>
-        <div className="widget1">
-          <DisplayOnePokemon />
-        </div>
-        <div className="widget2">
-          <GenerationPokemonStat />
+        <div className="organisation">
+          <div className="widget1">
+            <DisplayOnePokemon />
+          </div>
+          <div className="widget2">
+            <GenerationPokemonStat />
+          </div>
+          <div className="widget3">
+            <CompetenceChartPokemon />
+          </div>
+          <div className="widget4">
+            <AnecdotePokemon />
+          </div>
+          <div className="gestionAPI">
+            <GestionAPI />
+          </div>
         </div>
       </div>
     );

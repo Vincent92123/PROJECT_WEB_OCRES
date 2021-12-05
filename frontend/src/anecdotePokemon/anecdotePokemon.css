@@ -21,15 +21,6 @@ body {
     color: white;
 }
 
-.TitleSection input {
-    width: 200px;
-    height: 40px;
-    border-radius: 10px;
-    border: 1px solid #2073b3;
-    font-size: 18px;
-    padding-left: 10px;
-}
-
 .TitleSection button {
     width: 180px;
     height: 60px;
@@ -55,8 +46,4 @@ body {
 
 .DisplaySection h4, h3{
     margin: 5px;
-}
-
-.DisplaySection img{
-    width: 400px;
 }
