@@ -42,3 +42,9 @@
   font-size: 1.2em;
   width: 80%;
 }
+
+.organisation {
+  display: flex;
+    justify-content: space-between;
+  flex-wrap: wrap;
+}

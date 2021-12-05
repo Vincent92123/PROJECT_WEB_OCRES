@@ -1,46 +1,54 @@
-import "./DisplayOnePokemon.css";
-import React, { Component } from "react";
+import "./CompetenceChartPokemon.css";
+import React, { Component, Fragment } from "react";
 import Axios from "axios";
+import {
+    Radar,
+    RadarChart,
+    PolarGrid,
+    PolarAngleAxis,
+    PolarRadiusAxis
+} from "recharts";
 
-class DisplayOnePokemon extends Component {
+class CompetenceChartPokemon extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            pokemonChosen: false,
+            pokemonStat: [],
             pokemonName: "",
             pokemonNameAPI: "",
-            pokemonImgAPI: "",
-            pokemonHpAPI: "",
-            pokemonAttackAPI: "",
-            pokemonDefenseAPI: "",
-            pokemonTypeAPI: "",
-            pokemonColorAPI: "",
             pokemonIdAPI: "",
-            pokemonLoading: true
+            pokemonColorAPI: "",
+            pokemonImgAPI: "",
+            pokemonChosen: false,
+            pokemonLoading: true,
         };
     }
 
     handlePokemonNameChange = (e) => {
         this.setState({ pokemonName: e.target.value });
+        this.setState({ pokemonChosen: true });
     }
 
-    searchPokemon = async () => {
+    searchPokemon = () => {
         this.setState({ pokemonLoading: true });
         Axios.get(`http://localhost:5000/getPokemon/pokemonStat/${this.state.pokemonName}`)
             .then(res => {
                 if (res.status === 200 && res != null) {
-                    this.setState({ pokemonImgAPI: res['data']['sprites']['other']['official-artwork']['front_default'] });
-                    this.setState({ pokemonHpAPI: res.data.stats[0].base_stat });
-                    this.setState({ pokemonAttackAPI: res.data.stats[1].base_stat });
-                    this.setState({ pokemonDefenseAPI: res.data.stats[2].base_stat });
-                    this.setState({ pokemonTypeAPI: res.data.types[0].type.name });
+                    let copyJSONArray = this.state.pokemonStat.slice();
+
+                    res.data.stats.map((stat, index) => {
+                        copyJSONArray[index] = stat.base_stat;
+                    })
+
+                    this.setState({ pokemonStat: copyJSONArray });
+
+                    this.setState({ pokemonImgAPI: res.data.sprites.front_default });
                     this.setState({ pokemonIdAPI: res.data.id });
-                    this.setState({ pokemonChosen: true });
+                    this.setState({ pokemonNameAPI: res.data.name });
 
                     Axios.get(`http://localhost:5000/getPokemon/pokemonNameFr/${this.state.pokemonIdAPI}`)
                         .then(response => {
                             if (response.status === 200 && response != null) {
-                                this.setState({ pokemonNameAPI: response.data.names[4].name });
                                 this.setState({ pokemonColorAPI: response.data.color.name });
                             } else {
                                 console.log('problem in second call');
@@ -59,7 +67,7 @@ class DisplayOnePokemon extends Component {
             });
     }
 
-    render() {
+    renderGraph() {
         let color = "";
         if (this.state.pokemonColorAPI === "black") {
             color = "#1D2525";
@@ -91,30 +99,82 @@ class DisplayOnePokemon extends Component {
         if (this.state.pokemonColorAPI === "yellow") {
             color = "#FFF380";
         }
+
+        let data = [
+            {
+                subject: "Hp",
+                copyPokemonStat: this.state.pokemonStat[0]
+            },
+            {
+                subject: "Attack",
+                copyPokemonStat: this.state.pokemonStat[1]
+            },
+            {
+                subject: "Defense",
+                copyPokemonStat: this.state.pokemonStat[2]
+            },
+            {
+                subject: "Special Attack",
+                copyPokemonStat: this.state.pokemonStat[3]
+            },
+            {
+                subject: "Special Defense",
+                copyPokemonStat: this.state.pokemonStat[4]
+            },
+            {
+                subject: "Speed",
+                copyPokemonStat: this.state.pokemonStat[5]
+            }
+        ];
+
+        if (this.state.pokemonNameAPI === undefined) {
+            return null;
+        } else {
+            return (<React.Fragment>
+                <h1>{this.state.pokemonNameAPI}</h1>
+                <img src={this.state.pokemonImgAPI} style={{ backgroundColor: color }} />
+                <RadarChart
+                    cx={300}
+                    cy={250}
+                    outerRadius={150}
+                    width={500}
+                    height={500}
+                    data={data}
+                >
+                    <PolarGrid />
+                    <PolarAngleAxis dataKey="subject" />
+                    <PolarRadiusAxis />
+                    <Radar
+                        name={this.state.pokemonName}
+                        dataKey="copyPokemonStat"
+                        stroke="#8884d8"
+                        fill="#8884d8"
+                        fillOpacity={0.6}
+                    />
+                </RadarChart>
+            </React.Fragment>
+            )
+        }
+    }
+
+    render() {
         return (
             <div className="DisplayOnePokemon">
                 <div className="TitleSection">
                     <h1>Pokemon Stats</h1>
                     <input type="text" onChange={this.handlePokemonNameChange} value={this.state.pokemonName} />
-                    <button onClick={this.searchPokemon}>Search Pokemon</button>
+                    <button onClick={this.searchPokemon}>Search Pokemon stats graph</button>
                 </div>
                 <div className="DisplaySection">
                     {((!this.state.pokemonChosen) && (this.state.pokemonLoading == false)) ? (
                         <h1>Please choose a Pokemon</h1>
                     ) : (
-                        <>
-                            <h1>{this.state.pokemonNameAPI}</h1>
-                            <img src={this.state.pokemonImgAPI} style={{ backgroundColor: color }} />
-                            <h3>Type: {this.state.pokemonTypeAPI}</h3>
-                            <h4>Hp: {this.state.pokemonHpAPI}</h4>
-                            <h4>Attack: {this.state.pokemonAttackAPI}</h4>
-                            <h4>Defense: {this.state.pokemonDefenseAPI}</h4>
-                        </>
+                        <div>{this.renderGraph()}</div>
                     )}
                 </div>
-            </div>
+            </div >
         );
     }
 }
 
-export default DisplayOnePokemon;
+export default CompetenceChartPokemon;
