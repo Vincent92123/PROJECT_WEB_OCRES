@@ -2,6 +2,7 @@ import React, { useEffect, useState, Component } from 'react';
 import './App.css';
 import DisplayOnePokemon from './onePokemonStat/DisplayOnePokemon';
 import GenerationPokemonStat from './generationPokemonStat/generationPokemonStat';
+import DisplayCartesPokemon from './displayCartesPokemon/DisplayCartes';
 
 class App extends Component {
   constructor(props) {
@@ -31,6 +32,9 @@ class App extends Component {
         </div>
         <div className="widget2">
           <GenerationPokemonStat />
+        </div>
+        <div>
+          <DisplayCartesPokemon />
         </div>
       </div>
     );
