@@ -134,9 +134,7 @@ class GenerationPokemonStat extends Component {
     return (
       <>
         <div>
-
           <div>
-
             <select name="Type" onChange={this.handlePokemonTypeChange}>
               <option value="bug">Bug</option>
               <option value="dragon" >Dragon</option>
@@ -160,7 +158,7 @@ class GenerationPokemonStat extends Component {
           {this.state.pokemonLoading === true || this.state.allPokemonLoading === true ? <h1 style={{ textAlign: 'center' }}>Loading...</h1> :
             (
               <>
-                <div className="grid-container">
+                <div className="ScrollableSection">
                   {this.state.pokemonNameTypeChooseAPI.map((i, index) => {
                     {
                       return <CardPokemon
