@@ -100,14 +100,12 @@ class DisplayOnePokemon extends Component {
                     <button onClick={this.searchPokemon}>Search Pokemon</button>
                 </div>
                 <div className="DisplaySection">
-                   
-                            <h1>{this.state.pokemonNameAPI}</h1>
-                            <img src={this.state.pokemonImgAPI} style={{ backgroundColor: color }} />
-                            <h3>Type: {this.state.pokemonTypeAPI}</h3>
-                            <h4>Hp: {this.state.pokemonHpAPI}</h4>
-                            <h4>Attack: {this.state.pokemonAttackAPI}</h4>
-                            <h4>Defense: {this.state.pokemonDefenseAPI}</h4>
-                    
+                    <h1>{this.state.pokemonNameAPI}</h1>
+                    <img src={this.state.pokemonImgAPI} style={{ backgroundColor: color }} />
+                    <h3>Type: {this.state.pokemonTypeAPI}</h3>
+                    <h4>Hp: {this.state.pokemonHpAPI}</h4>
+                    <h4>Attack: {this.state.pokemonAttackAPI}</h4>
+                    <h4>Defense: {this.state.pokemonDefenseAPI}</h4>
                 </div>
             </div>
         );
