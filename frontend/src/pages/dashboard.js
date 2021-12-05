@@ -12,7 +12,7 @@ const Dashboard = () => {
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
-                height: '90vh'
+                height: '90vh'                
             }}
         >
             <div className="widget1">
