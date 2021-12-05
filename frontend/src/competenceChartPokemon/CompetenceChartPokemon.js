@@ -106,19 +106,19 @@ class CompetenceChartPokemon extends Component {
                 copyPokemonStat: this.state.pokemonStat[0]
             },
             {
-                subject: "Attack",
+                subject: "Att",
                 copyPokemonStat: this.state.pokemonStat[1]
             },
             {
-                subject: "Defense",
+                subject: "Def",
                 copyPokemonStat: this.state.pokemonStat[2]
             },
             {
-                subject: "Special Attack",
+                subject: "Spe Att",
                 copyPokemonStat: this.state.pokemonStat[3]
             },
             {
-                subject: "Special Defense",
+                subject: "Spe Def",
                 copyPokemonStat: this.state.pokemonStat[4]
             },
             {

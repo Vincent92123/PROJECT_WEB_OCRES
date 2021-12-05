@@ -103,7 +103,7 @@ class GenerationPokemonStat extends Component {
 
   searchAllPokemon = () => {
     this.setState({ pokemonLoading: true });
-    let number = 200;
+    let number = 500;
     Axios.get(`http://localhost:5000/getPokemonByGeneration/allPokemonGen/${number}`)
       .then(res => {
         var nameArray = [];

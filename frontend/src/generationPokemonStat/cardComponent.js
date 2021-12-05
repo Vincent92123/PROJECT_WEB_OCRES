@@ -15,15 +15,11 @@ function CardPokemon({ pokemonStatProp, id }) {
 
   return (
     <div className="DisplaySection2">
-      <>
-        <img src={imageURL} style={{ backgroundColor: typeColors[type] }} />
-        <h1>
-          {name}
-        </h1>
-      </>
+      <img src={imageURL} style={{ backgroundColor: typeColors[type] }} />
+      <h1>
+        {name}
+      </h1>
     </div>
-
-
   );
 }
 
