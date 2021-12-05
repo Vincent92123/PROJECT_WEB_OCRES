@@ -5,5 +5,18 @@ padding : 2px 2px 2px 2px;
 .ScrollableSection{
     overflow-y: scroll;
     height: 250px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 4px;
+    padding-left: 20px;
+}
 
+.ComponentDiv{
+    border-radius: 10px;
+    margin: 10px 10px 10px 10px;
+    background-color: gray;
+}
+
+.SingleCarteWidget{
+    display: flex;
 }
