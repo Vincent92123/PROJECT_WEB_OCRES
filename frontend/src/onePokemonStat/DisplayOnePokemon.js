@@ -21,6 +21,7 @@ class DisplayOnePokemon extends Component {
     }
 
     handlePokemonNameChange = (e) => {
+        this.setState({ pokemonChosen: true });
         this.setState({ pokemonName: e.target.value });
     }
 
@@ -99,18 +100,14 @@ class DisplayOnePokemon extends Component {
                     <button onClick={this.searchPokemon}>Search Pokemon</button>
                 </div>
                 <div className="DisplaySection">
-                    {((!this.state.pokemonChosen) && (this.state.pokemonLoading == false)) ? (
-                        <h1>Please choose a Pokemon</h1>
-                    ) : (
-                        <>
+                   
                             <h1>{this.state.pokemonNameAPI}</h1>
                             <img src={this.state.pokemonImgAPI} style={{ backgroundColor: color }} />
                             <h3>Type: {this.state.pokemonTypeAPI}</h3>
                             <h4>Hp: {this.state.pokemonHpAPI}</h4>
                             <h4>Attack: {this.state.pokemonAttackAPI}</h4>
                             <h4>Defense: {this.state.pokemonDefenseAPI}</h4>
-                        </>
-                    )}
+                    
                 </div>
             </div>
         );

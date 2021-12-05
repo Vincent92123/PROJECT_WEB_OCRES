@@ -1,9 +1,11 @@
 .DisplayOnePokemon {
     display: flex;
-    justify-content: center;
+    justify-content: right;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 25px;
     flex-direction: column;
+    background-color: #E0E2E4;
+    border-radius: 10px;
 }
 
 body {
@@ -13,7 +15,7 @@ body {
 
 .TitleSection {
     width: 100%;
-    height: 300px;
+    height: 200px;
     background-color: #5DB9FF;
     display: flex;
     flex-direction: column;
@@ -58,5 +60,5 @@ body {
 }
 
 .DisplaySection img{
-    width: 400px;
+    width: 200px;
 }
