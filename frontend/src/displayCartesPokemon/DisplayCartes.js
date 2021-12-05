@@ -5,11 +5,17 @@ import "./DisplayCartesPokemon.css"
 
 function CarteArea(props){
     return (
-        <div>
-        <img src= {props.src} data-key= {props.i}  width={250} />
-        <h2>Release date : {props.releaseDate} </h2>
-        <h2>Current average price : {props.averagePrice}$</h2>
-        <h3> Artist : {props.artist} </h3>
+        <div className="SingleCarteWidget">
+
+            <div>
+                <img src= {props.src} data-key= {props.i}  width={250} />
+            </div>
+            <div>
+                <h2>Release date : {props.releaseDate} </h2>
+                <h2>Current average price : {props.averagePrice}$</h2>
+                <h3> Artist : {props.artist} </h3>
+            </div>
+        
         </div>
         
 
@@ -221,11 +227,20 @@ class DisplayCartesPokemon extends Component {
                 <button onClick={this.searchCartesPokemon}>Search Cartes</button>
 
                 <h1>{this.state.cartesAmount}</h1>  
-                <div className="ScrollableSection">
-                {thelist}
-                </div>
                 
-                {theChosenOne}
+                    <div className="ComponentDiv">
+                        <div className="ScrollableSection">
+                            {thelist}
+                        </div>
+                    </div>
+                    <div className="ComponentDiv">
+                        {theChosenOne}
+                    </div>
+                
+                
+                
+                
+                
                 
             </div>
           
