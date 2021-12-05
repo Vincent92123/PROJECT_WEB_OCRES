@@ -10,7 +10,7 @@ import {
 
 const Navbar = () => {
     return (
-        <>
+        <div classname="box">
             <Nav>
                 <Bars />
                 <NavMenu>
@@ -25,7 +25,7 @@ const Navbar = () => {
                     </NavLink>
                 </NavMenu>
             </Nav>
-        </>
+        </div>
     );
 };
 

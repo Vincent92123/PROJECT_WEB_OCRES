@@ -13,7 +13,7 @@ class App extends Component {
         <Router>
           <Navbar />
           <Routes>
-            <Route path='/' exact elements={<Home />} />
+            <Route path='/' exact element={<Home />} />
             <Route path='/dashboard' element={<Dashboard />} />
             <Route path='/apiManager' element={<APIManager />} />
           </Routes>
