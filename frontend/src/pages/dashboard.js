@@ -15,7 +15,6 @@ const Dashboard = () => {
                 height: '90vh'
             }}
         >
-            <h1>Dashboard</h1>
             <div className="widget1">
                 <DisplayOnePokemon />
             </div>
