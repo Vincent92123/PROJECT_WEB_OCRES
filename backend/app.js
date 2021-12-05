@@ -13,7 +13,9 @@ var usersRouter = require("./routes/users");
 var testAPIRouter = require("./routes/testAPI");
 var getPokemonRouter = require("./routes/getPokemon");
 var getPokemonByGenerationRouter = require("./routes/getPokemonByGeneration");
+var getCartesPokemonRouter = require("./routes/getCartesPokemon");
 var getAPIRouter = require("./routes/apiRoutes.js");;
+
 
 var app = express();
 
@@ -37,6 +39,7 @@ app.use("/testAPI", testAPIRouter);
 app.use("/getPokemon", getPokemonRouter);
 app.use("/getPokemonByGeneration", getPokemonByGenerationRouter);
 app.use("/", getAPIRouter);
+app.use("/getCartesPokemon", getCartesPokemonRouter);
 
 
 app.use(function (req, res, next) {

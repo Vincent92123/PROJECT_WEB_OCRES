@@ -1,0 +1,8 @@
+.CarteStyle {
+padding : 2px 2px 2px 2px;
+}
+
+.ScrollableSection{
+    overflow-y: scroll;
+    height: 250px;
+}
