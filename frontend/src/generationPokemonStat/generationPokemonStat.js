@@ -41,69 +41,14 @@ class GenerationPokemonStat extends Component {
     }
   }
 
-  setBug = (e) => {
-    this.setState({ defineType: "bug" });
-  }
+  handlePokemonTypeChange = (e) => {
+    this.setState({ defineType: e.target.value, });
 
-  setDragon = (e) => {
-    this.setState({ defineType: "dragon" });
-  }
-
-  setElectric = (e) => {
-    this.setState({ defineType: "electric" });
-  }
-
-  setFighting = (e) => {
-    this.setState({ defineType: "fighting" });
-  }
-
-  setFire = (e) => {
-    this.setState({ defineType: "fire" });
-  }
-
-  setFlying = (e) => {
-    this.setState({ defineType: "flying" });
-  }
-
-  setGhost = (e) => {
-    this.setState({ defineType: "ghost" });
-  }
-
-  setGrass = (e) => {
-    this.setState({ defineType: "grass" });
-  }
-
-  setGround = (e) => {
-    this.setState({ defineType: "ground" });
-  }
-
-  setIce = (e) => {
-    this.setState({ defineType: "ice" });
-  }
-
-  setNormal = (e) => {
-    this.setState({ defineType: "normal" });
-  }
-
-  setPoison = (e) => {
-    this.setState({ defineType: "poison" });
-  }
-
-  setPsychic = (e) => {
-    this.setState({ defineType: "psychic" });
-  }
-
-  setRock = (e) => {
-    this.setState({ defineType: "rock" });
-  }
-
-  setWater = (e) => {
-    this.setState({ defineType: "water" });
   }
 
   searchAllPokemon = () => {
     this.setState({ pokemonLoading: true });
-    let number = 500;
+    let number = 151;
     Axios.get(`http://localhost:5000/getPokemonByGeneration/allPokemonGen/${number}`)
       .then(res => {
         var nameArray = [];
@@ -191,34 +136,22 @@ class GenerationPokemonStat extends Component {
         <div>
 
           <div>
-            <button onClick={this.showMenu}>
-              Show Type
-            </button>
-            {
-              this.state.showMenu
-                ? (
-                  <div className="menu">
-                    <button onClick={this.setBug}> Bug </button>
-                    <button onClick={this.setDragon}> Dragon </button>
-                    <button onClick={this.setFire}> Fire </button>
-                    <button onClick={this.setGhost}> Ghost </button>
-                    <button onClick={this.setGround}> Ground </button>
-                    <button onClick={this.setNormal}> Normal </button>
-                    <button onClick={this.setPsychic}> Psychic </button>
-                    <button onClick={this.setElectric}> Electric </button>
-                    <button onClick={this.setFighting}> Fighting </button>
-                    <button onClick={this.setFlying}> Flying </button>
-                    <button onClick={this.setGrass}> Grass </button>
-                    <button onClick={this.setIce}> Ice </button>
-                    <button onClick={this.setPoison}> Poison </button>
-                    <button onClick={this.setRock}> Rock </button>
-                    <button onClick={this.setWater}> Water </button>
-                  </div>
-                )
-                : (
-                  null
-                )
-            }
+
+            <select name="Type" onChange={this.handlePokemonTypeChange}>
+              <option value="bug">Bug</option>
+              <option value="dragon" >Dragon</option>
+              <option value="electric ">Electric</option>
+              <option value="fighting">Fighting</option>
+              <option value="fire">Fire</option>
+              <option value="ghost">Ghost</option>
+              <option value="grass">Grass</option>
+              <option value="ground">Ground</option>
+              <option value="ice">Ice</option>
+              <option value="normal">Normal</option>
+              <option value="poison">Poison</option>
+              <option value="rock">Rock</option>
+              <option value="water">Water</option>
+            </select>
 
           </div>
 
