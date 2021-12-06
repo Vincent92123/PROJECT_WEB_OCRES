@@ -54,7 +54,7 @@ class AnecdotePokemon extends Component {
                     <div className="espace">
                         <h1>Fun Fact</h1>
                         <div className="bouttonAnecdote">
-                            <button onClick={this.searchAnecdote}>Charge</button>
+                            <button onClick={this.searchAnecdote}>Load</button>
                             <button onClick={this.chooseAnecdote}>Change</button>
                         </div>
                     </div>
