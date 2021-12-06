@@ -14,7 +14,6 @@ router.get("/allPokemonGen/:number", async (req, res) => {
         .catch(error => {
             console.log(error);
         });
-    console.log("response: ", response);
     res.json(response);
 });
 
@@ -30,7 +29,6 @@ router.get("/one_pokemon_gen/:pokemonName", async (req, res) => {
         .catch(error => {
             console.log(error);
         });
-    console.log("response: ", response);
     res.json(response);
 });
 

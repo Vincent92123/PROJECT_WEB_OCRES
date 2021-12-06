@@ -21,8 +21,6 @@ class AnecdotePokemon extends Component {
 
                     this.setState({ listPokemonAnecdote: res.data });
 
-                    console.log(this.state.listPokemonAnecdote);
-
                     this.setState({ anecdoteLoading: false });
                 } else {
                     console.log('problem in call');
@@ -40,9 +38,7 @@ class AnecdotePokemon extends Component {
             let max = this.state.listPokemonAnecdote.length - 1;
             var randomNumber = Math.floor(Math.random() * max) + 1;
             actualNumberOfAnecdote = randomNumber;
-            console.log(randomNumber);
             this.setState({ pokemonAnecdote: this.state.listPokemonAnecdote[randomNumber].description });
-            console.log(this.state.pokemonAnecdote);
         }
         this.setState({ actualAnecdote: randomNumber });
     }

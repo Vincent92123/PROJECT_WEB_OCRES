@@ -107,7 +107,6 @@ class GestionAPI extends Component {
                         let actual = i;
                         if (this.state.anecdotes[actual].name === this.state.nameAnecdoteToUpdate) {
                             this.setState({ idAnecdoteToUpdate: res.data[actual]._id });
-                            console.log("id: ", this.state.idAnecdoteToUpdate);
                         }
                     }
 
@@ -127,7 +126,6 @@ class GestionAPI extends Component {
         const data = {
             description: this.state.updateDescription
         };
-        console.log("id: ", this.state.idAnecdoteToUpdate);
         Axios.patch(`http://localhost:5000/api/anecdotes/${this.state.idAnecdoteToUpdate}`, data)
             .then(res => {
                 this.setState({ anecdoteUpdated: true });
@@ -147,7 +145,6 @@ class GestionAPI extends Component {
                         let actual = i;
                         if (this.state.anecdotes[actual].name === this.state.nameAnecdoteToDelete) {
                             this.setState({ idAnecdoteToDelete: res.data[actual]._id });
-                            console.log("id: ", this.state.idAnecdoteToDelete);
                         }
                     }
 
@@ -163,7 +160,6 @@ class GestionAPI extends Component {
     deleteAnecdote = async () => {
         this.setState({ anecdoteDeleted: false });
 
-        console.log("id: ", this.state.idAnecdoteToDelete);
         Axios.delete(`http://localhost:5000/api/anecdotes/${this.state.idAnecdoteToDelete}`)
             .then(res => {
                 this.setState({ anecdoteDeleted: true });

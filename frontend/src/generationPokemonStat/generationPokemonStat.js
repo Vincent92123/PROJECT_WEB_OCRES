@@ -43,7 +43,6 @@ class GenerationPokemonStat extends Component {
 
   handlePokemonTypeChange = (e) => {
     this.setState({ defineType: e.target.value, });
-
   }
 
   searchAllPokemon = () => {
@@ -96,7 +95,6 @@ class GenerationPokemonStat extends Component {
         );
       })
     this.setState({ pokemonLoading: false });
-    console.log(this.state.pokemonNameListAPI);
   }
 
   fillCard = () => {
@@ -106,7 +104,6 @@ class GenerationPokemonStat extends Component {
 
     for (let a = 0; a < this.state.pokemonLenghtList; a++) {
       let pokemonStat = [];
-
 
       pokemonStat[0] = this.state.pokemonNameListAPI[a];
       pokemonStat[1] = this.state.pokemonImgAPI[a];

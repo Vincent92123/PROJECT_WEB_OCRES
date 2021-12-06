@@ -4,7 +4,6 @@ import GenerationPokemonStat from './generationPokemonStat/generationPokemonStat
 import DisplayCartesPokemon from './displayCartesPokemon/DisplayCartes';
 import CompetenceChartPokemon from './competenceChartPokemon/CompetenceChartPokemon';
 import AnecdotePokemon from './anecdotePokemon/anecdotePokemon';
-import './Dashboard.css'
 
 function Dashboard() {
     return (

@@ -38,8 +38,6 @@ class DisplayCartesPokemon extends Component {
             currentCarte: null,
 
         };
-        //
-        //this.handlePokemonRarityChange = this.handlePokemonRarityChange.bind(this);
     }
 
     handlePokemonNameChange = (e) => {
@@ -53,7 +51,6 @@ class DisplayCartesPokemon extends Component {
 
     handleCarteChosen = (e) => {
         this.setState({ currentCarte: e.target.dataset.key });
-        console.log(e.key);
     }
 
 
@@ -66,17 +63,11 @@ class DisplayCartesPokemon extends Component {
             Axios.get(`http://localhost:5000/getCartesPokemon/cartesPokemon/${this.state.pokemonName}`)
                 .then(res => {
                     if (res.status === 200 && res != null) {
-                        // this.setState({ pokemonImgAPI: res['data']['sprites']['other']['official-artwork']['front_default'] });
-                        // this.setState({ pokemonHpAPI: res.data.stats[0].base_stat });
-
-                        console.log("il rentre dans 1");
 
                         var listOfCartesImg = [];
                         var listOfPrices = [];
                         var listOfReleaseDates = [];
                         var listOfArtists = [];
-
-                        console.log(res.data.data[0].cardmarket.prices.averageSellPrice);
 
                         //push
 
@@ -87,21 +78,10 @@ class DisplayCartesPokemon extends Component {
                                 listOfPrices[i] = res.data.data[i].cardmarket.prices.averageSellPrice;
                                 listOfReleaseDates[i] = res.data.data[i].set.releaseDate;
                                 listOfArtists[i] = res.data.data[i].artist;
-                                console.log(i);
                             }
                         } catch (err) {
                             console.log(err);
                         }
-
-                        // let reponse = res.data.totalCount;
-                        // {reponse.map((i,index) => {
-
-                        //     listOfCartesImg[index] = res.data.data[index].images.large;
-                        //     listOfPrices[index] = res.data.data[index].cardmarket.prices.averageSellPrice;
-                        //     listOfReleaseDates[index] = res.data.data[index].set.releaseDate;
-                        //     listOfArtists[index] = res.data.data[index].artist;
-                        // })
-                        // }
 
                         this.setState(function (state, props) {
                             return {
@@ -130,8 +110,6 @@ class DisplayCartesPokemon extends Component {
             Axios.get(`http://localhost:5000/getCartesPokemon/cartesPokemon/${this.state.pokemonName}/${this.state.pokemonRarity}`)
                 .then(res => {
                     if (res.status === 200 && res != null) {
-                        // this.setState({ pokemonImgAPI: res['data']['sprites']['other']['official-artwork']['front_default'] });
-                        // this.setState({ pokemonHpAPI: res.data.stats[0].base_stat });
 
                         var listOfCartesImg = [];
                         var listOfPrices = [];
@@ -144,7 +122,6 @@ class DisplayCartesPokemon extends Component {
                             listOfReleaseDates[i] = res.data.data[i].set.releaseDate;
                             listOfArtists[i] = res.data.data[i].artist;
                         }
-
 
                         this.setState({
                             arrayOfCartes: listOfCartesImg,
@@ -162,10 +139,7 @@ class DisplayCartesPokemon extends Component {
                 .catch(error => {
                     console.log(error);
                 });
-
         }
-
-
     }
 
 
@@ -176,13 +150,6 @@ class DisplayCartesPokemon extends Component {
             thelist.push(<img src={this.state.arrayOfCartes[i]} className="CarteStyle" data-key={i} width={50} onClick={this.handleCarteChosen} />);
 
         };
-
-        // {this.state.arrayOfCartes.map((i, index) => {
-        //   {
-        //     thelist.push(<Carte imgSource= {this.state.arrayOfCartes[index]} key= {index} value={index} width={50} onClick= {this.handleCarteChosen}/>);
-        //       console.log(index);
-        //  }
-        //   })}
 
         if (!this.state.currentCarte) {
             console.log("no card selected")
