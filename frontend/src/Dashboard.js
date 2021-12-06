@@ -23,16 +23,16 @@ function Dashboard() {
                         <GenerationPokemonStat />
                     </div>
                     <div className="widget3">
-                    <CompetenceChartPokemon />
+                        <CompetenceChartPokemon />
                     </div>
                 </div>
-               <div class="col-md-4 col-xs-12">
+                <div class="col-md-4 col-xs-12">
                     <div className="widget4">
                         <DisplayCartesPokemon />
                     </div>
-               </div>
-                
-                
+                </div>
+
+
             </div>
         </div>
     )

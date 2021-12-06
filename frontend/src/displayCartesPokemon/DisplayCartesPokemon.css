@@ -14,9 +14,67 @@ padding : 2px 2px 2px 2px;
 .ComponentDiv{
     border-radius: 10px;
     margin: 10px 10px 10px 10px;
-    background-color: gray;
+    background-color: #E8E8EC;
 }
 
 .SingleCarteWidget{
     display: flex;
+    background-color: #E8E8EC;
+}
+
+.TitleSectionFourthWidget {
+    width: 100%;
+    height: 50px;
+    background-color: #D1D1D5;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: white;
+}
+
+.TitleSectionFourthWidget select {
+    width: 140px;
+    height: 30px;
+    margin: 20px;
+    border-radius: 10px;
+    font-size: 15px;
+    padding-left: 10px;
+    border: none;
+    color: white;
+    background-color: #C02B18;
+}
+
+.TitleSectionFourthWidget button {
+    width: 200px;
+    height: 30px;
+    margin: 20px;
+    border-radius: 10px;
+    font-size: 15px;
+    padding-left: 10px;
+    border: none;
+    color: white;
+    background-color: #C02B18;
+}
+
+.TitleSectionFourthWidget button:hover {
+    cursor: pointer;
+    background-color: #d44532;
+}
+
+.TitleSectionFourthWidget input {
+    width: 140px;
+    height: 30px;
+    border-radius: 10px;
+    border: 1px solid #d4e2ec;
+    font-size: 15px;
+    padding-left: 10px;
+}
+
+.dataArea h3 {
+    font-size: 16px;
+}
+
+.addRadius {
+    margin:5px;
 }

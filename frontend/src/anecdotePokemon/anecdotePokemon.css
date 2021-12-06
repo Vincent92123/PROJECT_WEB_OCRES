@@ -1,9 +1,12 @@
-.DisplayOnePokemon {
+.DisplayOnePokemonAnecdote {
     display: flex;
     justify-content: center;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 25px;
+    font-size: 15px;
     flex-direction: column;
+    border-radius: 10px;
+        margin: 10px 10px 10px 10px;
+        background-color: #E8E8EC;
 }
 
 body {
@@ -11,39 +14,64 @@ body {
     padding: 0%;
 }
 
-.TitleSection {
+.TitleSectionAnecdote {
     width: 100%;
-    height: 300px;
-    background-color: #5DB9FF;
+    height: 100px;
+    background-color: #A2BFE4;
+    border-radius: 10px;
+    padding: 5px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     color: white;
+    border-radius: 10px;
 }
 
-.TitleSection button {
-    width: 180px;
-    height: 60px;
-    margin: 20px;
+.TitleSectionAnecdote button {
+    width: 120px;
+    height: 30px;
+    margin-bottom: 20px;
     border-radius: 10px;
-    font-size: 18px;
+    font-size: 15px;
     padding-left: 10px;
+    padding-bottom: 2px;
     border: none;
     color: white;
-    background-color: #9bcbf0;
+    background-color: #C02B18;
 }
 
-.TitleSection button:hover {
+.TitleSectionAnecdote button:hover {
     cursor: pointer;
-    background-color: #6a96b8;
+    background-color: #d44532;
 }
 
-.DisplaySection {
+.DisplaySectionAnecdote {
     display: flex;
     flex-direction: column;
     align-items: center;
+    border-radius:  10px;
+    height: 75px;
+    background-color: #E8E8EC;
 }
 
-.DisplaySection h4, h3{
+.DisplaySectionAnecdote h4, h3{
     margin: 5px;
+}
+
+
+.espace {
+    display: flex;
+    flex-direction: row;
+}
+
+.espace h1{
+    display: flex;
+    flex-direction: row;
+    padding-top: 15px;
+    margin-top: 15px;
+}
+
+.bouttonAnecdote {
+    padding:20px;
+    margin-top: 15px;
 }

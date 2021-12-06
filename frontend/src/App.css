@@ -9,7 +9,8 @@
 
 .navigation {
   font-family: 'Sora', sans-serif;
-  background-color: #CE2211;
+  background-color: #C02B18;
+  height: 45px;
 }
 
 .App {
@@ -17,6 +18,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+  background-color: white;
 }
 
 .App-logo {

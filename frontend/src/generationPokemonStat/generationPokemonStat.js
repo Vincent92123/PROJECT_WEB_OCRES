@@ -48,7 +48,7 @@ class GenerationPokemonStat extends Component {
 
   searchAllPokemon = () => {
     this.setState({ pokemonLoading: true });
-    let number = 151;
+    let number = 250;
     Axios.get(`http://localhost:5000/getPokemonByGeneration/allPokemonGen/${number}`)
       .then(res => {
         var nameArray = [];
@@ -133,8 +133,8 @@ class GenerationPokemonStat extends Component {
 
     return (
       <>
-        <div>
-          <div>
+        <div className="ComponentDivType">
+          <div className="TitleSectionSecondWidget">
             <select name="Type" onChange={this.handlePokemonTypeChange}>
               <option value="bug">Bug</option>
               <option value="dragon" >Dragon</option>
@@ -151,11 +151,11 @@ class GenerationPokemonStat extends Component {
               <option value="water">Water</option>
             </select>
 
-          </div>
+            <button onClick={this.searchAllPokemon}>Search</button>
+            <button onClick={this.fillCard}>Render</button>
 
-          <button onClick={this.searchAllPokemon}>Search Pokemon</button>
-          <button onClick={this.fillCard}>Render</button>
-          {this.state.pokemonLoading === true || this.state.allPokemonLoading === true ? <h1 style={{ textAlign: 'center' }}>Loading...</h1> :
+          </div>
+          {this.state.pokemonLoading === true || this.state.allPokemonLoading === true ? <h1 style={{ textAlign: 'center' }}>    </h1> :
             (
               <>
                 <div className="ScrollableSection">

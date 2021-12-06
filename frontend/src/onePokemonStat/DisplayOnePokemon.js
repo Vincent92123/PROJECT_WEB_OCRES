@@ -93,19 +93,25 @@ class DisplayOnePokemon extends Component {
             color = "#FFF380";
         }
         return (
-            <div className="DisplayOnePokemon">
-                <div className="TitleSection">
-                    <h1>Pokemon Stats</h1>
-                    <input type="text" onChange={this.handlePokemonNameChange} value={this.state.pokemonName} />
-                    <button onClick={this.searchPokemon}>Search Pokemon</button>
+            <div className="ComponentDivFirstWidget">
+                <div className="TitleSectionFirstWidget">
+                    <h1>Stats</h1>
+                    <div className="divDeColonne">
+                        <input type="text" onChange={this.handlePokemonNameChange} value={this.state.pokemonName} />
+                        <button onClick={this.searchPokemon}>Search</button>
+                    </div>
                 </div>
-                <div className="DisplaySection">
-                    <h1>{this.state.pokemonNameAPI}</h1>
-                    <img src={this.state.pokemonImgAPI} style={{ backgroundColor: color }} />
-                    <h3>Type: {this.state.pokemonTypeAPI}</h3>
-                    <h4>Hp: {this.state.pokemonHpAPI}</h4>
-                    <h4>Attack: {this.state.pokemonAttackAPI}</h4>
-                    <h4>Defense: {this.state.pokemonDefenseAPI}</h4>
+                <div className="DisplaySectionFirstWidget">
+                    <div>
+                        <img src={this.state.pokemonImgAPI} style={{ backgroundColor: color }} />
+                    </div>
+                    <div>
+                        <h1>{this.state.pokemonNameAPI}</h1>
+                        <h3>Type: {this.state.pokemonTypeAPI}</h3>
+                        <h4>Hp: {this.state.pokemonHpAPI}</h4>
+                        <h4>Attack: {this.state.pokemonAttackAPI}</h4>
+                        <h4>Defense: {this.state.pokemonDefenseAPI}</h4>
+                    </div>
                 </div>
             </div>
         );

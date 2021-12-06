@@ -1,0 +1,84 @@
+.DisplayOnePokemon {
+    display: flex;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    flex-direction: column;
+}
+
+body {
+    margin: 0%;
+    padding: 0%;
+}
+
+.TitleSectionGraph {
+    width: 100%;
+    height: 85px;
+    background-color: #D1D1D5;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+.TitleSectionGraph input {
+    width: 150px;
+    height: 20px;
+    margin-right: 8px;
+    border-radius: 10px;
+    border: 1px solid #bcc3c9;
+    font-size: 15px;
+    padding-left: 10px;
+}
+
+.TitleSectionGraph button {
+    width: 80px;
+    height: 25px;
+    margin: 0px;
+    border-radius: 10px;
+    font-size: 15px;
+    padding-left: 10px;
+    border: none;
+    color: white;
+    background-color: #C02B18;
+}
+
+.TitleSectionGraph button:hover {
+    cursor: pointer;
+    background-color: #d44532;
+}
+
+.DisplaySection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 250px;
+}
+
+.DisplaySection h4, h3{
+    margin: 5px;
+}
+
+.DisplaySection img{
+    max-width: 150px;
+}
+
+.ComponentDivGraph{
+    border-radius: 10px;
+    margin: 10px 10px 10px 10px;
+    background-color: #E8E8EC;
+}
+
+.displayGraph {
+    padding-right: 65px;
+    padding-top: -50px;
+    display: flex;
+    flex-direction: row;
+}
+
+.buttonDirection {
+    display: flex;
+    flex-direction: row;
+}
+

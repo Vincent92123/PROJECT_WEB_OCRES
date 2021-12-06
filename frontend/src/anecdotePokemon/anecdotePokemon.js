@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Axios from "axios";
+import "./anecdotePokemon.css";
 
 class AnecdotePokemon extends Component {
     constructor(props) {
@@ -38,7 +39,7 @@ class AnecdotePokemon extends Component {
         while (actualNumberOfAnecdote === this.state.actualAnecdote) {
             let max = this.state.listPokemonAnecdote.length - 1;
             var randomNumber = Math.floor(Math.random() * max) + 1;
-            actualNumberOfAnecdote = randomNumber
+            actualNumberOfAnecdote = randomNumber;
             console.log(randomNumber);
             this.setState({ pokemonAnecdote: this.state.listPokemonAnecdote[randomNumber].description });
             console.log(this.state.pokemonAnecdote);
@@ -48,18 +49,19 @@ class AnecdotePokemon extends Component {
 
     render() {
         return (
-            <div className="DisplayOnePokemon">
-                <div className="TitleSection">
-                    <h1>Pokemon Anecdote</h1>
-                    <button onClick={this.searchAnecdote}>Charge anecdote</button>
-                    <button onClick={this.chooseAnecdote}>Change anecdote</button>
+            <div className="DisplayOnePokemonAnecdote">
+                <div className="TitleSectionAnecdote">
+                    <div className="espace">
+                        <h1>Fun Fact</h1>
+                        <div className="bouttonAnecdote">
+                            <button onClick={this.searchAnecdote}>Charge</button>
+                            <button onClick={this.chooseAnecdote}>Change</button>
+                        </div>
+                    </div>
                 </div>
-                <div className="DisplaySection">
-
-                    <h1>Fun fact </h1>
-
-                    <div>{this.state.pokemonAnecdote}</div>
-
+                <div className="DisplaySectionAnecdote">
+                    <div>
+                        {this.state.pokemonAnecdote}</div>
                 </div>
             </div >
         );

@@ -131,27 +131,27 @@ class CompetenceChartPokemon extends Component {
             return null;
         } else {
             return (<React.Fragment>
-                <h1>{this.state.pokemonNameAPI}</h1>
-                <img src={this.state.pokemonImgAPI} style={{ backgroundColor: color }} />
-                <RadarChart
-                    cx={300}
-                    cy={250}
-                    outerRadius={150}
-                    width={500}
-                    height={500}
-                    data={data}
-                >
-                    <PolarGrid />
-                    <PolarAngleAxis dataKey="subject" />
-                    <PolarRadiusAxis />
-                    <Radar
-                        name={this.state.pokemonName}
-                        dataKey="copyPokemonStat"
-                        stroke="#8884d8"
-                        fill="#8884d8"
-                        fillOpacity={0.6}
-                    />
-                </RadarChart>
+                <div className="displayGraph">
+                    <RadarChart
+                        cx={290}
+                        cy={132}
+                        outerRadius={100}
+                        width={500}
+                        height={500}
+                        data={data}
+                    >
+                        <PolarGrid />
+                        <PolarAngleAxis dataKey="subject" />
+                        <PolarRadiusAxis />
+                        <Radar
+                            name={this.state.pokemonName}
+                            dataKey="copyPokemonStat"
+                            stroke="#CD5C5C"
+                            fill="#CD5C5C"
+                            fillOpacity={0.6}
+                        />
+                    </RadarChart>
+                </div>
             </React.Fragment>
             )
         }
@@ -159,11 +159,15 @@ class CompetenceChartPokemon extends Component {
 
     render() {
         return (
-            <div className="DisplayOnePokemon">
-                <div className="TitleSection">
-                    <h1>Pokemon Stats</h1>
-                    <input type="text" onChange={this.handlePokemonNameChange} value={this.state.pokemonName} />
-                    <button onClick={this.searchPokemon}>Search Pokemon stats graph</button>
+            <div className="ComponentDivGraph">
+                <div className="TitleSectionGraph">
+                    <h1>Graph</h1>
+                    <div className="buttonDirection">
+                        <input type="text" onChange={this.handlePokemonNameChange} value={this.state.pokemonName} />
+                        <div className="heightButton">
+                            <button onClick={this.searchPokemon}>Search</button>
+                        </div>
+                    </div>
                 </div>
                 <div className="DisplaySection">
                     {((!this.state.pokemonChosen) && (this.state.pokemonLoading == false)) ? (

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Axios from "axios";
+import "./gestionAPI.css";
 
 class GestionAPI extends Component {
     constructor(props) {
@@ -176,7 +177,7 @@ class GestionAPI extends Component {
         return (
             <div>
                 <h1>API Manager</h1>
-                <div>
+                <div className="detect">
                     <h2>Research anecdotes</h2>
                     <div>
                         <h3>Search for an anecdote, enter a word and get all anecdotes that contain it</h3>
